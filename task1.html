@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Lab1</title>
+    <meta name="description" content="Task1">
+    <meta name="author" content="Perehuda Yaroslav">
+    <style type="text/css">
+      footer, header
+      {
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 50px;
+        padding: 1rem;
+        background-color: #efefef;
+        text-align: center;
+      }
+      aside
+      {
+        background: #f0f0f0;
+        padding: 10px;
+        width: 800px;
+        height: 70px;
+        float: right;
+      }
+      .menuitem
+      {
+        background-color: #3fdfff;
+      }
+      .word { font-size: 8em; }
+       wbr { display: inline-block; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Лабораторна робота 1</h1>
+    </header>
+
+    <article>
+      <h2>Article tag</h2>
+      <p>Google Chrome is a free, open-source web browser developed by Google, released in 2008.</p>
+    </article>
+
+    <hr>
+    <h2>Aside tag</h2>
+    <aside>
+      <h4>Epcot Center</h4>
+      <p>The Epcot Center is a theme park in Disney World, Florida.</p>
+    </aside> 
+    <p>My family and I visited The Epcot center this summer.</p>
+    <br><br><br><br>
+
+    <hr>
+    <h2>Audio tag</h2>
+    <audio controls alt="firefox audio">
+      <source src="http://developer.mozilla.org/@api/deki/files/2926/=AudioTest_(1).ogg">
+      Ваш браузер не поддерживает <code>audio</code> элемент. 
+  </audio>
+
+  <hr>
+  <h2>Bdi tag</h2>
+  <p dir="ltr">This arabic word <bdi> أسبوع</bdi> is automatically displayed right-to-left.</p>
+
+  <hr>
+  <h2>Canvas tag</h2>
+  <script> 
+    window.onload = function() {
+      var drawingCanvas = document.getElementById('smile');
+      if(drawingCanvas && drawingCanvas.getContext) {
+      var context = drawingCanvas.getContext('2d');
+      // Рисуем окружность 
+      context.strokeStyle = "#000";
+      context.fillStyle = "#fc0";
+      context.beginPath();
+      context.arc(100,100,50,0,Math.PI*2,true);
+      context.closePath();
+      context.stroke();
+      context.fill();
+      // Рисуем левый глаз 
+      context.fillStyle = "#fff";
+      context.beginPath();
+      context.arc(84,90,8,0,Math.PI*2,true);
+      context.closePath();
+      context.stroke();
+      context.fill();
+      // Рисуем правый глаз 
+      context.beginPath();
+      context.arc(116,90,8,0,Math.PI*2,true);
+      context.closePath();
+      context.stroke();
+      context.fill();
+      // Рисуем рот
+      context.beginPath();
+      context.moveTo(70,115);
+      context.quadraticCurveTo(100,130,130,115);
+      context.quadraticCurveTo(100,150,70,115); 
+      context.closePath();
+      context.stroke();
+      context.fill();
+      }
+    }
+  </script>
+  <canvas id="smile" width="200" height="200" alt="smile">
+    <p>Ваш браузер не поддерживает рисование.</p>
+  </canvas>
+
+  <hr>
+  <h2>Datalist tag</h2>
+  <input list="browsers">
+  <datalist id="browsers">
+    <option value="Internet Explorer">
+    <option value="Firefox">
+    <option value="Chrome">
+    <opddtion value="Opera">
+    <option value="Safari">
+  </datalist> 
+
+  <hr>
+  <h2>Details and summary tag</h2>
+  <details>
+    <summary>Some details</summary>
+    <p> - created by me!</p>
+    <p>All content and graphics on this web site are the property of Yaroslav.</p>
+  </details> 
+
+  <hr>
+  <h2>Dialog tag</h2>
+  <dialog>
+    <p>This is an HTML dialog! Click the button to close it.</p>
+    <button id="close">Close Dialog</button>
+  </dialog>
+    <button id="show">Show Me the Dialog!</button>
+    <script>
+      /* Thanks to Eiji Kitamura for the dialog demo which you can see at https://demo.agektmr.com/dialog/ */
+      var dialog = document.querySelector('dialog');
+      document.querySelector('#show').onclick = function() {
+        dialog.show();
+      };
+      document.querySelector('#close').onclick = function() {
+        dialog.close();
+      };
+    </script>
+
+    <hr>
+    <h2>Embed tag</h2>
+    <embed src="https://i.gifer.com/Sh6Y.gif" width="400" height="400" alt="Макака - посетитель сайта">
+
+    <hr>
+    <h2>Figure and figcaption tags</h2>
+    <figure>
+      <img src="https://wmpics.pics/di-Z0QIV3YN.jpg" width="400" height="400" alt="Крутой рисунок">
+      <figcaption>Cool picture from the manga</figcaption>
+    </figure>
+    
+    <hr>
+    <h2>Main tag</h2>
+    <main>
+      <p>The main content of a document!!!</p>
+    </main>
+
+    <hr>
+    <h2>Main tag</h2>
+    <p>Do not forget to do your <mark>homework</mark> today.</p> 
+
+    <hr>
+    <h2>Menuitem tag</h2>
+    <div contextmenu="popup-menu" class="menuitem">
+      Right-click here to see the adjusted context menu
+    </div>
+    
+    <menu type="context" id="popup-menu">
+      <menuitem type="checkbox" checked>Checkbox</menuitem>
+      <hr>
+      <menuitem type="command" label="This command does nothing" icon="https://developer.cdn.mozilla.net/static/img/favicon144.png">
+        Commands don't render their contents.
+      </menuitem>
+      <menuitem type="command" label="This command has javascript" onclick="alert('command clicked')">
+        Commands don't render their contents.
+      </menuitem>
+      <hr>
+      <menuitem type="radio" radiogroup="group1">Radio Button 1</menuitem>
+      <menuitem type="radio" radiogroup="group1">Radio Button 2</menuitem>
+    </menu>
+
+    <hr>
+    <h2>Meter tag</h2>
+    <meter value="2" min="0" max="10">2 out of 10</meter><br>
+    <meter value="0.6">60%</meter><br>
+    <meter value="100" max="100">100%</meter>
+
+    <hr>
+    <h2>Nav tag</h2>
+    <nav>
+      <a href="https://www.google.com/">Google</a> | <a href="https://gifer.com/ru/">Gifs</a> |
+      <a href="http://htmlbook.ru/html/nav">Nav tag</a>
+    </nav>
+
+    <hr>
+    <h2>Output tag</h2>
+    <form oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+      0<input type="range" id="a" value="50">100
+      +<input type="number" id="b" value="50">
+      =<output name="x" for="a b"></output>
+    </form> 
+
+    <hr>
+    <h2>Picture and source tags</h2>
+    <picture>
+      <source media="(min-width: 1000px)" srcset="https://wmpics.pics/di-Q2XY.png">
+      <source media="(min-width: 800px)" srcset="https://wmpics.pics/di-Z0QIV3YN.jpg">
+      <img src="https://wmpics.pics/di-2VY4.jpg" alt="Flowers" style="width: 500px;">
+    </picture>
+
+    <hr>
+    <h2>Progress tag</h2>
+    <p>We are almost done).</p>
+    <progress max="100" value="75">
+      Done <span id="value">75</span>%
+    </progress>
+
+    <hr>
+    <h2>Section tag</h2>
+    <section>
+      <h2>APEX Legends</h2>
+      <p>APEX Legends is one of the most popular games in the world</p>
+    </section> 
+
+    <hr>
+    <h2>Template tag</h2>
+    <button onclick="showContent()">Show content</button>
+    
+    <template>
+      <div class="myClass">I like: </div>
+    </template>
+    
+    <script>
+      var myArr = ["Audi", "BMW", "Ford", "Honda", "Jaguar", "Nissan"];
+      
+      function showContent() {
+        var temp, item, a, i;
+        //get the template element:
+        temp = document.getElementsByTagName("template")[0];
+        //get the DIV element from the template:
+        item = temp.content.querySelector("div");
+        //for each item in the array:
+        for (i = 0; i < myArr.length; i++) {
+          //Create a new node, based on the template:
+          a = document.importNode(item, true);
+          //Add data from the array:
+          a.textContent += myArr[i];
+          //append the new node wherever you like:
+          document.body.appendChild(a);
+        }
+      }
+    </script>
+
+    <hr>
+    <h2>Template tag</h2>
+    <p>We open at <time>10:00</time> every morning.</p>
+    <p>I have a lecture on <time datetime="2019-02-09 10:00">02.09.2019</time>.</p>
+
+    <hr>
+    <h2>Template and video tags</h2>
+    <video width="500" height="400" controls crossorigin="anonymous">
+      <source src="./1.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+      <track kind="subtitles" src="./subtitles.vtt" srclang="en" label="English">
+        Тег video не поддерживается вашим браузером.
+    </video>
+
+    <hr>
+    <h2>Template and video tags</h2>
+    <p>It's a pretty long word:</p>
+    <p class="word">flocci<wbr>naucini<wbr>hilipili<wbr>fication</p>
+
+    <footer>
+      <p>All rights reserved! :)</p>
+    </footer> 
+  </body>
+</html>
